@@ -53,3 +53,8 @@ html, body {
 
 /* End Sticky Footer */
 
+
+/* ERROR MESSAGES */
+.flash {
+	color:red;
+}

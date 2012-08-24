@@ -10,8 +10,8 @@ class ContactUsController < ApplicationController
     body = params[:contact_us][:body]
     
     if name.blank? || email.blank? || body.blank? || subject.blank
-      flash.now[:notice] = "Please fill out all fields"
-      render :action => 'new'
+      flash[:notice] = "Please fill out all fields"
+      redirect_to '/contact_us/new'
     else
       ContactMailer.contact_email(name, email, subject, body).deliver
       flash[:notice] = "Email was successfully sent, we'll get back to you soon."
