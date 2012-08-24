@@ -4,6 +4,10 @@
 			<h1>Contact Us</h1>
 			<%= form_for :contact_us, :url => "/contact_us/send_email" do |f| %>
 				<div class="field">
+					<%= f.label "Your Name"%>
+					<%= f.text_field :email %>
+				</div>
+				<div class="field">
 					<%= f.label "Your Email"%>
 					<%= f.text_field :email %>
 				</div>
@@ -13,10 +17,10 @@
 				</div>
 				<div class="field">
 					<%= f.label "Message" %>
-					<%= f.text_field :message %>
+					<%= f.text_area :message %>
 				</div>
 				<div class="actions">
-					<%= f.submit %>
+					<%= f.submit, :value => "Send" %>
 				</div>
 			<% end %>
 		</div>
