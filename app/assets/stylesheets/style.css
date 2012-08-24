@@ -20,7 +20,14 @@ html, body, div, span, applet, object, iframe,
 		
 }
 
+.header ul {list-style:none; margin:0; padding:0; margin-bottom:50px; margin-top:20px}
+.header ul li { display:inline-block; width:19.5%; padding:0; margin:0; text-align:center}
+.header ul li a { text-decoration:none }
+.header ul li a:hover { background:none; color:blue }
 
+body {
+	min-width:970px;
+}
 
 /* For a sticky footer */
 
