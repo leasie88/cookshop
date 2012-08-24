@@ -14,7 +14,9 @@
 					<ul>
 						<% @latest_menu = Menu.all.last unless Menu.all.empty? %>
 						<li><%= link_to "Home", root_path %></li>
-
+						<% if @latest_menu.present? %>
+						<li><%= link_to "Menus", menu_path(@latest_menu)%></li>
+						<% end %>
 						<li><%= link_to "Reserve", "http://www.google.com"%></li>
 						<li><%= link_to "Events", "http://www.google.com"%></li>
 						<li><%= link_to "Contact", "http://www.google.com"%></li>
