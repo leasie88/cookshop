@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<div class="twelve columns">
+			<h1>Contact Us</h1>
+			<%= form_for :contact_us, :url => send_email_path do |f| %>
+				<div class="field">
+					<%= f.label "Your Email"%>
+					<%= f.text_field :email %>
+				</div>
+				<div class="field">
+					<%= f.label "Subject" %>
+					<%= f.text_field :subject %>
+				</div>
+				<div class="field">
+					<%= f.label "Message" %>
+					<%= f.text_field :message %>
+				</div>
+				<div class="actions">
+					<%= f.submit, "Send"%>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
