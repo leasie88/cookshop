@@ -1,5 +1,6 @@
 Cookshop::Application.routes.draw do
   match "contact_us/new" => "contact_us#new"
+  match "/contact_us/send_email" => "contact_us#send_email"
   resources :menus
 
   # The priority is based upon order of creation:
