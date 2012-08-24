@@ -6,7 +6,7 @@
 .tabs ul li a{text-decoration:none}
 .tabs ul li a:hover { color:blue; background:none }
 
-iframe { width:700px; height:845px; }
+iframe { width:700px; height:852px; }
 #brunch-contents, #lunch-contents, #dinner-contents {
 	text-align:center;
 	float:center;
@@ -50,6 +50,7 @@ function changeTab(tab) {
 	$("#lunch").css("color", "black");
 	$("#dinner").css("color", "black");
 	$("#"+tab).css("color", "red");
+	return false;
 }
 
 $(document).ready(function() {
