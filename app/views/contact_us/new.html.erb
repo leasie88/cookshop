@@ -1,5 +1,12 @@
 <div class="container">
 	<div class="row">
+		<% if flash.present? %>
+			<% flash.each do |key, value| %>
+				<%= content_tag :div, value, :class => "flash #{key}"%>
+			<% end %>
+		<% end %>
+	</div>
+	<div class="row">
 		<div class="twelve columns">
 			<h1>Contact Us</h1>
 			<%= form_for :contact_us, :url => "/contact_us/send_email" do |f| %>
