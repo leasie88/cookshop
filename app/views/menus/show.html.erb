@@ -20,9 +20,9 @@ iframe { width:700px; height:852px; }
 			<div class="four columns" id="tabsContainer">
 				<div class="tabs">
 					<ul>
-						<li> <a href="#brunch" id="brunch" onclick="changeTab('brunch')">Brunch</a></li>
-						<li> <a href="#lunch" id="lunch" onclick="changeTab('lunch')">Lunch</a></li>
-						<li> <a href="#dinner" id="dinner" onclick="changeTab('dinner')">Dinner</a></li>
+						<li> <a href="#brunch-contents" id="brunch">Brunch</a></li>
+						<li> <a href="#lunch-contents" id="lunch">Lunch</a></li>
+						<li> <a href="#dinner-contents" id="dinner">Dinner</a></li>
 					</ul>
 				</div>
 			</div>
@@ -40,23 +40,26 @@ iframe { width:700px; height:852px; }
 </div>
 
 <script type="text/javascript">
-function changeTab(tab) {
-	$("#brunch-contents").hide();
-	$("#lunch-contents").hide();
-	$("#dinner-contents").hide();
-	$("#"+tab+"-contents").fadeIn(300);
-	
-	$("#brunch").css("color", "black");
-	$("#lunch").css("color", "black");
-	$("#dinner").css("color", "black");
-	$("#"+tab).css("color", "red");
-	return false;
-}
 
 $(document).ready(function() {
 	$("#brunch-contents").hide();
 	$("#lunch-contents").hide();
 	$("#dinner").css("color", "red");
-	$(".header ul li#menus a").css("color", "red")
+	$(".header ul li#menus a").css("color", "red");
+	
+	
+	$(".tabs ul li a").click(function (event) {
+			event.preventDefault();
+			$("#brunch-contents").hide();
+			$("#lunch-contents").hide();
+			$("#dinner-contents").hide();
+			$(this).attr("href").fadeIn(300);
+
+			$("#brunch").css("color", "black");
+			$("#lunch").css("color", "black");
+			$("#dinner").css("color", "black");
+			$(this).css("color", "red");
+			return false;
+	});
 });
 </script>
