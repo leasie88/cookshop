@@ -19,13 +19,13 @@
 				</div>
 			</div>
 			<div id="brunch-contents">
-				<%= send_file @menu.brunch.url, :disposition => "inline" %>
+				<iframe src="<%=@menu.brunch.url%>" frameborder="0">
 			</div>
 			<div id="lunch-contents">
-				<%= send_file @menu.lunch.url, :disposition => "inline" %>
+				<iframe src="<%=@menu.lunch.url%>" frameborder="0">
 			</div>
 			<div id="dinner-contents">
-				<%= send_file @menu.dinner.url, :disposition => "inline" %>
+				<iframe src="<%=@menu.dinner.url%>" frameborder="0">
 			</div>
 		</div>
 	</div>
