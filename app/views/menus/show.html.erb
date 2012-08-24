@@ -12,20 +12,20 @@
 			<div class="four columns" id="tabsContainer">
 				<div class="tabs">
 					<ul>
-						<li> <a href="#" id="brunch" onclick="changeTab('brunch-contents')">Brunch</a></li>
-						<li> <a href="#" id="lunch" onclick="changeTab('lunch-contents')">Lunch</a></li>
-						<li> <a href="#" id="dinner" onclick="changeTab('dinner-contents')">Dinner</a></li>
+						<li> <a href="#" id="brunch" onclick="changeTab('brunch')">Brunch</a></li>
+						<li> <a href="#" id="lunch" onclick="changeTab('lunch')">Lunch</a></li>
+						<li> <a href="#" id="dinner" onclick="changeTab('dinner')">Dinner</a></li>
 					</ul>
 				</div>
 			</div>
 			<div id="brunch-contents">
-				<%= @menu.brunch %>
+				<%= image_tag @menu.brunch.url %>
 			</div>
 			<div id="lunch-contents">
-				<%= @menu.lunch %>
+				<%= image_tag @menu.lunch.url %>
 			</div>
 			<div id="dinner-contents">
-				<%= @menu.dinner %>
+				<%= image_tag @menu.dinner.url %>
 			</div>
 		</div>
 	</div>
@@ -36,11 +36,17 @@ function changeTab(tab) {
 	$("#brunch-contents").hide();
 	$("#lunch-contents").hide();
 	$("#dinner-contents").hide();
-	$("#"+tab).fadeIn(300);
+	$("#"+tab+"-contents").fadeIn(300);
+	
+	$("#brunch").css("color", "black");
+	$("#lunch").css("color", "black");
+	$("#dinner").css("color", "black");
+	$("#"+tab).css("color", "red");
 }
 
 $(document).ready(function() {
 	$("#brunch-contents").hide();
 	$("#lunch-contents").hide();
+	$("#dinner").css("color", "red");
 });
 </script>
