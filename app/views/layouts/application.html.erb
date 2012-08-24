@@ -3,12 +3,29 @@
 <head>
   <title>Cookshop</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "/assets/foundation.css"%>
+  <%= stylesheet_link_tag "/assets/style.css"%>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="wrapper">
 
-<%= yield %>
+				<div class="header">
+					<h1>THIS IS THE HEADER</h1>
+				</div>
+
+				<div class="push"></div>
+
+			</div>
+			
+			
+			<%= yield %>
+			
+			
+			<div class="footer">
+				<p class="footerText">THIS IS THE FOOTER</p>
+			</div>
 
 </body>
 </html>
