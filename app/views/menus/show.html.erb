@@ -12,20 +12,20 @@
 			<div class="four columns" id="tabsContainer">
 				<div class="tabs">
 					<ul>
-						<li> <a href="#" id="brunch" onclick="changeTab('brunch')">Brunch</a></li>
-						<li> <a href="#" id="lunch" onclick="changeTab('lunch')">Lunch</a></li>
-						<li> <a href="#" id="dinner" onclick="changeTab('dinner')">Dinner</a></li>
+						<li> <a href="#brunch" id="brunch" onclick="changeTab('brunch')">Brunch</a></li>
+						<li> <a href="#lunch" id="lunch" onclick="changeTab('lunch')">Lunch</a></li>
+						<li> <a href="#dinner" id="dinner" onclick="changeTab('dinner')">Dinner</a></li>
 					</ul>
 				</div>
 			</div>
 			<div id="brunch-contents">
-				<%= image_tag @menu.brunch.url %>
+				<%= send_file @menu.brunch.url, :disposition => "inline" %>
 			</div>
 			<div id="lunch-contents">
-				<%= image_tag @menu.lunch.url %>
+				<%= send_file @menu.lunch.url, :disposition => "inline" %>
 			</div>
 			<div id="dinner-contents">
-				<%= image_tag @menu.dinner.url %>
+				<%= send_file @menu.dinner.url, :disposition => "inline" %>
 			</div>
 		</div>
 	</div>
