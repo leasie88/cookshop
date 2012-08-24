@@ -20,9 +20,9 @@ iframe { width:700px; height:852px; }
 			<div class="four columns" id="tabsContainer">
 				<div class="tabs">
 					<ul>
-						<li> <a href="#brunch-contents" id="brunch">Brunch</a></li>
-						<li> <a href="#lunch-contents" id="lunch">Lunch</a></li>
-						<li> <a href="#dinner-contents" id="dinner">Dinner</a></li>
+						<li> <a href="#brunch" id="brunch">Brunch</a></li>
+						<li> <a href="#lunch" id="lunch">Lunch</a></li>
+						<li> <a href="#dinner" id="dinner">Dinner</a></li>
 					</ul>
 				</div>
 			</div>
@@ -48,12 +48,12 @@ $(document).ready(function() {
 	$(".header ul li#menus a").css("color", "red");
 	
 	
-	$(".tabs ul li a").click(function (event) {
-			$(event).preventDefault();
+	$(".tabs ul li a").click(function(event) {
+			event.preventDefault();
 			$("#brunch-contents").hide();
 			$("#lunch-contents").hide();
 			$("#dinner-contents").hide();
-			$($(this).attr("href").toString()).fadeIn(300);
+			$($(this).attr("href").toString()+"-contents").fadeIn(300);
 
 			$("#brunch").css("color", "black");
 			$("#lunch").css("color", "black");
